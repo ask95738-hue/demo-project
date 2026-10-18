@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <time.h>
+
+int main()
+{
+    time_t s; // time_t is like we write int s..... which Stores the raw system time in seconds........
+    s = time(NULL);
+    struct tm* current_time = localtime(&s); // anddddd this willl Convert seconds into human-readable time structure.......
+    printf("%02d:%02d:%02d\n",
+           current_time->tm_hour,
+           current_time->tm_min,
+           current_time->tm_sec); // will print time in HH:MM:SS format.......
+    return 0;
+}
